@@ -1,0 +1,53 @@
+{
+  "name": "react-todo-01",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React ToDo List without Redux",
+  "keywords": [
+    "React",
+    "ToDo"
+  ],
+  "homepage": "https://github.com/itmo-avol/react-todo-01#readme",
+  "bugs": {
+    "url": "https://github.com/itmo-avol/react-todo-01/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itmo-avol/react-todo-01.git"
+  },
+  "license": "MIT",
+  "author": "Andrey Volynkin",
+  "main": "public/scripts/main.js",
+  "scripts": {
+    "build": "npm run build:prod",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production",
+    "test": "npm run test:types",
+    "test:types": "tsc --noEmit"
+  },
+  "browserslist": [
+    "> 1% and last 2 years and last 2 version and not dead and not IE 11 and not OperaMini all",
+    "last 3 Firefox versions",
+    "last 3 Chrome versions"
+  ],
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}

@@ -1,0 +1,13 @@
+.todo
+{
+	line-height: 1.5;
+	
+	cursor: pointer;
+}
+
+.completed .text
+{
+	text-decoration: line-through;
+	
+	opacity: 0.6;
+}

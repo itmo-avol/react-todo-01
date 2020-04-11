@@ -1,0 +1,13 @@
+.form
+{
+	padding-bottom: 0.5em;
+	margin-bottom: 0.5em;
+	
+	border-bottom: 1px solid lightgray;
+}
+
+.form label,
+.form input
+{
+	margin-right: 0.5em;
+}
