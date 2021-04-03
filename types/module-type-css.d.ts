@@ -7,7 +7,7 @@ declare module '*.module.css'
 	export = classNames;
 }
 
-declare module '*.global.css'
+declare module '*.css'
 {
 	const none: never;
 	

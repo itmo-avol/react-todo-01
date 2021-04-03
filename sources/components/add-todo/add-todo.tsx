@@ -23,7 +23,7 @@ export const AddTodo: FC<AddTodoProps> = ( { onAddTodo } ) =>
 	const handleChange = useCallback(
 		( event: ChangeEvent<HTMLInputElement> ) =>
 		{
-			const input = event.target as HTMLInputElement;
+			const input = event.target;
 			
 			setValue( input.value );
 		},
@@ -38,7 +38,7 @@ export const AddTodo: FC<AddTodoProps> = ( { onAddTodo } ) =>
 			onAddTodo( value );
 			setValue( '' );
 		},
-		[value, setValue, onAddTodo]
+		[value, setValue, onAddTodo],
 	);
 	/** ID поля формы */
 	const id = 'text' + Styles.form;

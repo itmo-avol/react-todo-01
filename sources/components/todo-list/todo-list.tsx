@@ -40,7 +40,7 @@ export const TodoList: FC<TodoListProps> = ( { todos, onTodoToggle } ) => (
 						>
 							{todo.content}
 						</Todo>
-					)
+					),
 				)
 			)
 			: 'No todos, yay!'

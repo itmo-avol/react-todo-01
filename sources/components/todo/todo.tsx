@@ -45,5 +45,5 @@ export const Todo: FC<TodoProps> = ( { id, children, completed, onToggle } ) =>
 				{children}
 			</span>
 		</li>
-	)
+	);
 };

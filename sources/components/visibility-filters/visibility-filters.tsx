@@ -24,7 +24,12 @@ export const VisibilityFilters: FC<VisibilityFiltersProps> = ( { activeFilter, o
 	const handleClick = useCallback(
 		( event: React.MouseEvent<HTMLSpanElement> ) =>
 		{
-			const item = event.target as HTMLElement;
+			const item = event.target;
+			
+			if ( !(item instanceof HTMLElement) )
+			{
+				return;
+			}
 			
 			onChange( item.dataset.filter as keyof typeof VISIBILITY_FILTERS || 'ALL' );
 		},
@@ -46,7 +51,7 @@ export const VisibilityFilters: FC<VisibilityFiltersProps> = ( { activeFilter, o
 					>
 						{filter}
 					</span>
-				)
+				),
 			)}
 		</div>
 	)

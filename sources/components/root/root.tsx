@@ -18,9 +18,9 @@ export type RootProps = {
 export const Root: FC<RootProps> = () =>
 {
 	/** Хранилище списка ToDo */
-	const [todos, setTodos] = useState( [] as Todo[] );
+	const [todos, setTodos] = useState<Todo[]>( [] );
 	/** Хранилище значения фильтра */
-	const [filter, setFilter] = useState( 'ALL' as keyof typeof VISIBILITY_FILTERS );
+	const [filter, setFilter] = useState<keyof typeof VISIBILITY_FILTERS>( 'ALL' );
 	
 	/** Обрабатывает добавление нового ToDo */
 	const handleAddTodo = useCallback(

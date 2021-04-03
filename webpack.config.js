@@ -5,15 +5,17 @@ module.exports = {
 	devtool: 'source-map',
 	entry: './sources/index.tsx',
 	output: {
-		path: Path.resolve( __dirname, 'public/scripts' ),
-		filename: '[name].js',
+		publicPath: '/',
+		path: Path.resolve( __dirname, 'public' ),
+		filename: 'scripts/[name].js',
+		assetModuleFilename: 'assets/[hash][ext][query]',
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.json'],
 	},
 	plugins: [
 		new MiniCssExtractPlugin( {
-			filename: '../styles/[name].css',
+			filename: 'styles/[name].css',
 		} ),
 	],
 	module: {
@@ -24,42 +26,15 @@ module.exports = {
 				loader: 'babel-loader',
 			},
 			{
-				test: /\.module\.css$/,
+				test: /\.css$/,
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							esModule: true,
-						},
-					},
-					{
-						loader: 'css-loader',
-						options: {
-							importLoaders: 1,
-							modules: true,
-						},
-					},
-				],
-			},
-			{
-				test: /\.global\.css$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							esModule: true,
-						},
-					},
+					MiniCssExtractPlugin.loader,
 					'css-loader',
 				],
 			},
 			{
 				test: /\.(png|jpe?g|gif|webp|svg)$/i,
-				loader: 'file-loader',
-				options: {
-					outputPath: '../assets/',
-					publicPath: '/assets'
-				},
+				type: 'asset/resource',
 			},
 		],
 	},
