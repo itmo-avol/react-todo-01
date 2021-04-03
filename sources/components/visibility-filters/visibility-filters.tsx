@@ -3,6 +3,11 @@ import { VISIBILITY_FILTERS } from '../../constants';
 import Styles from './visibility-filters.module.css';
 
 /**
+ * Ключ из VISIBILITY_FILTERS
+ */
+type VisibilityFilterKey = keyof typeof VISIBILITY_FILTERS;
+
+/**
  * Параметры фильтра видимости
  */
 export type VisibilityFiltersProps = {
@@ -12,8 +17,21 @@ export type VisibilityFiltersProps = {
 	 * Обрабатывает изменение фильтра
 	 * @param filter Новое значение фильтра
 	 */
-	onChange: ( filter: keyof typeof VISIBILITY_FILTERS ) => void;
+	onChange: ( filter: VisibilityFilterKey ) => void;
 };
+
+/**
+ * Множество ключей VISIBILITY_FILTERS
+ */
+const visibilityFilterKeys = new Set( Object.keys( VISIBILITY_FILTERS ) );
+
+/**
+ * Проверяет, является ли значение ключом из VISIBILITY_FILTERS
+ */
+const isVisibilityFilterKey = ( value: string | undefined ): value is VisibilityFilterKey => (
+	value != null
+	&& visibilityFilterKeys.has( value )
+);
 
 /**
  * Фильтр видимости
@@ -31,7 +49,13 @@ export const VisibilityFilters: FC<VisibilityFiltersProps> = ( { activeFilter, o
 				return;
 			}
 			
-			onChange( item.dataset.filter as keyof typeof VISIBILITY_FILTERS || 'ALL' );
+			const filter = item.dataset.filter;
+			
+			onChange(
+				isVisibilityFilterKey( filter )
+				? filter
+				: 'ALL'
+			);
 		},
 		[onChange],
 	);
