@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Todo } from '../todo/todo';
 import Styles from './todo-list.module.css';
 

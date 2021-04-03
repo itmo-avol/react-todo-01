@@ -1,4 +1,5 @@
-import React, { FC, useState, useCallback, useMemo } from 'react';
+import type { FC } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { AddTodo } from '../add-todo/add-todo';
 import { TodoList, Todo } from '../todo-list/todo-list';
 import { VisibilityFilters } from '../visibility-filters/visibility-filters';

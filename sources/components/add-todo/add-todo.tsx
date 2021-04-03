@@ -1,4 +1,5 @@
-import React, { FC, ChangeEvent, FormEvent, useState, useCallback } from 'react';
+import type { FC, ChangeEvent, FormEvent } from 'react';
+import { useState, useCallback } from 'react';
 import Styles from './add-todo.module.css';
 
 /**
